@@ -1,0 +1,16 @@
+version: '3'
+
+services:
+  db:
+    image: postgres:latest
+    container_name: postgres_db
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    environment:
+      POSTGRES_USER: orest
+      POSTGRES_PASSWORD: 123456
+      POSTGRES_DB: crewdb
+    ports:
+      - "5432:5432"
+volumes:
+  postgres_data:
